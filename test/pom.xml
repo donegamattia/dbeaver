@@ -12,7 +12,10 @@
     <artifactId>tests</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
+    <properties>
+        <sonar.organization>donegamattia</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
     <modules>
         <module>org.jkiss.dbeaver.test.platform</module>
         <module>org.jkiss.dbeaver.ext.clickhouse.test</module>
@@ -25,7 +28,6 @@
         <module>org.jkiss.dbeaver.ext.test</module>
         <module>org.jkiss.dbeaver.model.lsm.test</module>
     </modules>
-
     <build>
         <plugins>
             <plugin>
@@ -42,12 +44,10 @@
                     <product>org.jkiss.dbeaver.headless.product</product>
                     <testRuntime>default</testRuntime>
                     <!-- Auto start bundles -->
-<!--
-                    <defaultStartLevel>
+                    <!-- <defaultStartLevel>
                         <level>7</level>
                         <autoStart>true</autoStart>
-                    </defaultStartLevel>
--->
+                    </defaultStartLevel> -->
                     <bundleStartLevel>
                         <bundle>
                             <id>org.eclipse.osgi</id>
@@ -75,11 +75,9 @@
                             <autoStart>true</autoStart>
                         </bundle>
                     </bundleStartLevel>
-<!--                    <argLine>-agentlib:jdwp=transport=dt_socket,server=n,address=localhost:5006,suspend=y</argLine>-->
+                    <!-- <argLine>-agentlib:jdwp=transport=dt_socket,server=n,address=localhost:5006,suspend=y</argLine> -->
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
